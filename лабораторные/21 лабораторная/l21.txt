@@ -1,0 +1,27 @@
+﻿#!/bin/bash
+echo "Введите имя файла"
+read myfile
+if [ $myfile = ? ]
+then
+echo "Введите префикс файла, в который будут записаны размеры и имена отобранных файлов"
+read myfile
+fi
+echo "Введите расширение файла"
+read mytype
+if [ $mytype = ? ]
+then
+echo "Введите расширение, по которому хотите отсортировать файлы"
+read mytype
+fi
+echo "Введите размер файла"
+read mysize
+if [ $mysize = ? ]
+then
+echo "Введите максимальный размер файла, в который будут записаны имена и размеры отобранных файлов"
+read mysize
+fi
+find -name "*.$mytype" -type f -executable -printf "%P %k KB\n" >> $myfile.txt
+truncate -s $mysize $myfile.txt
+ls
+echo "Получившийся файл"
+cat $myfile.txt
