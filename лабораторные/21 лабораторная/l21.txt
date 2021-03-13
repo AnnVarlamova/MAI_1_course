@@ -1,4 +1,5 @@
 ﻿#!/bin/bash
+ls
 echo "Введите имя файла"
 read myfile
 if [ $myfile = ? ]
@@ -22,6 +23,5 @@ read mysize
 fi
 find -name "*.$mytype" -type f -executable -printf "%P %k KB\n" >> $myfile.txt
 truncate -s $mysize $myfile.txt
-ls
 echo "Получившийся файл"
 cat $myfile.txt
