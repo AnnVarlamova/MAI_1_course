@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+\usepackage[14pt]{extsizes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[left=36.5mm, top=30mm, right=36.5mm, bottom=30mm, nohead, nofoot]{geometry}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{fancyhdr}
+\setcounter{page}{526}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[C]{\thepage}
+\usepackage{ragged2e}
+\justifying
+\usepackage{setspace}
+
+\numberwithin{equation}{section}
+
+\begin{document}
+\noindent значение $b_{n-3}$, и т. д. Последовательно получим все значения неизвестных $b_{k}$ (k = 0, 1, ... , n - 1). После этого из первого уравнения сразу находится неизвестное $\alpha$.
+
+Таким образом, система (21.21) имеет решение при любых значениях $a_{0}$, $a_{1}$, ... , $a_{n}$, поэтому определитель этой системы не равен нулю и указанное решение единственно.
+
+На практике многочлен $P_{n-1}(x)$ в формуле (21.16) пи- \linebreak шут с неопределенными коэффициентами, которые нахо- \linebreak дят, решая систему (21.21). Затем вычисление данного интег- \linebreak  сводится к вычислению интеграла $\int \frac{d{x}}{\sqrt{ax^2+bx+c}}$, кото- \linebreak рый в случае, когда подкоренное выражение положительно \linebreak на некотором промежутке, легко сводится к табличному \linebreak (см. п. 18.3).
+
+Интегралы вида $\int \frac{d{x}}{(x-\lambda)^k\sqrt{ax^2+bx+c}}$ подстановкой $t = \frac{1}{x-\lambda}$ \linebreak сводятся к интегралам рассмотренного типа (21.16).
+
+\begin{center}
+    \large{\textbf{\underline{$\S$ 22.}}}
+    
+    \large{Интегрирование некоторых \linebreak трансцендентных функций}
+\end{center}
+\textbf{22.1. Интегралы вида $\int R(\sin{x}, \cos{x}) \,dx$}
+
+\noindent
+Подстановка $u = \tg{\frac{x}{2}}, -\pi < x < \pi,$ сводит интегралы вида $\int R(\sin{x}, \cos{x}) \,d{x}$ к интегралу от рациональной дроби. Дей- \linebreak ствительно, имеем 
+
+\begin{flushright}
+\large{$\sin{x} = \frac{2\sin{\frac{x}{2}}\cos{\frac{x}{2}}}{\cos^2{\frac{x}{2}} + \sin^2{\frac{x}{2}}} = \frac{2\tg{\frac{x}{2}}}{1 + \tg^2{x}} = \frac{2u}{1 + u^2},$} \hspace{30pt}(22.1)
+\end{flushright}
+
+\begin{center}
+    $$\cos{x} = \frac{\cos^2{\frac{x}{2}} -  \sin^2{\frac{x}{2}}}{\cos^2{\frac{x}{2}} + \sin^2{\frac{x}{2}}} = \frac{1 - \tg^2{x}}{1 + \tg^2{x}} = \frac{1 - u^2}{1 + u^2}$$,
+    
+    $x = 2\arctg{u}, d{x} = \frac{2d{u}}{1 + u^2}$,
+\end{center}
+
+\noindent поэтому\begin{center}
+    {$\int R(\sin{x}, \cos{x} \,d{x} = 2\int R(\frac{2u}{1 + u^2}, \frac{1 - u^2}{1 + u^2})\frac{d{u}}{1 + u^2}$}. \end{center}
+\noindent Таким образом получен интеграл от рациональной функции.
+\newpage
+Вычислим указанным методом интеграл $\int \frac{d{x}}{1 + \sin{x}}$. Ис- \linebreak пользуя формулы (22.1), получим $$\int \frac{d{x}}{1 + \sin{x}} = 2\int \frac{d{u}}{(1 + u)^2} = -\frac{2}{1 + u} + C = -\frac{2}{1+\tg{\frac{x}{2}}} + C.$$
+
+Следует, однако, иметь в виду, что, хотя с принципиаль- \linebreak ной точки зрения рассматриваемые интегралы всегда можно привести к интегралу от рационлаьной дроби указанным ме- \linebreak тодом, при практическом его применении он часто приводит к громоздким вычислениям; вместе с тем другие методы, в частности подстановки вида
+\begin{flushright}
+$u = \sin{x}, u = \cos{x}, u = \tg{x}$, \hspace{60pt}(22.2)
+\end{flushright}
+\noindent
+иногда значительно быстрее позволяют вычислить нужный интеграл.
+
+\textbf{Примеры. 1.} Рассмотрим интеграл $\int \frac{d{x}}{\cos^4{x}}$. Представим его в виде $\int \frac{d{x}}{\cos^4{x}} = \int \frac{1}{\cos^2{x}}\frac{d{x}}{\cos^2{x}}$. Сразу видно, что в этом слу- \linebreak чае очень удобна подстановка $u = \tg{x}$:
+\begin{center}
+    $\int \frac{d{x}}{\cos^4{x}} = \int (1 + \tg^2{x})d{\tg{x}} = \int (1 + u^2)d{u} =$ \linebreak $= u + \frac{u^3}{3} + C = \tg{x} + \frac{\tg^3{x}}{3} + C$.
+\end{center}
+
+\textbf{2.} Представляя интеграл $\int \frac{d{x}}{\sin^3{x}\cos{x}}$ в виде $\int \frac{d{x}}{\sin^3{x}\cos{x}} = $ \linebreak $ = \int \frac{\sin{x}d{x}}{\sin^4{x}\cos{x}}$, убеждаемся в целесообразности подстановки \linebreak $u = \cos{x}$. Действительно,
+\begin{center}
+    $\int \frac{d{x}}{\sin^3{x}\cos{x}} = \int \frac{\sin{x}d{x}}{\sin^4{x}\cos{x}} = -\int \frac{d{\cos{x}}}{\sin^4{x}\cos{x}} =$ \linebreak \linebreak $= -\int \frac{du}{(1 - u^2)^2u} = -\frac{1}{2} \int \frac{d{u^2}}{(1 - u^2)^2u^2} = -\frac{1}{2} \int \frac{d{v}}{(1 - v)^2v}^1 = -\frac{1}{2} \int \frac{(1 - v) + v}{(1 - v)^2v}d{v}$ \linebreak \linebreak $= -\frac{1}{2} \int \frac{d{v}}{(1-v)v} -\frac{1}{2} \int \frac{d{v}}{(1-v)^2} = -\frac{1}{2} \int \frac{(1 - v) + v}{(1-v)v}d{v} -\frac{1}{2} \frac{1}{1 - v}$ \linebreak \linebreak $= \frac{1}{2} \int \frac{d{v}}{v} -\frac{1}{2} \int \frac{d{v}}{1 - v} -\frac{1}{2} \frac{1}{1 - v} = -\frac{1}{2} \ln{|v|} + \frac{1}{2} \ln{|1 - v|} -\frac{1}{2(1 - v)} + C =$ \linebreak \linebreak $= \ln{|\tg{x}|} - \frac{1}{2\sin^2{x}} + C.$
+    
+    \footnote{\begin{spacing}{0.1}
+    Здесь сделана подстановка $v = u^2$.\end{spacing}}
+\end{center}
+\end{document} 
