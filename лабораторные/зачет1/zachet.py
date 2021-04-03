@@ -27,6 +27,7 @@ os.truncate(name + '1.txt', size) #обрезка файла до заданно
 crfile = open(name + '1.txt', 'r') #открытие для чтения
 lines = crfile.readlines() #считывание построчно
 crfile.close() #закрыли файл, чтобы открыть в другом режиме доступа
+os.remove(name + '.1txt') #удаление промежуточного файла
 ourf = open(name + '.txt', 'w') #открытие в режиме записи
 for line in lines:  #цикл строк файла
     if "bytes" in line: #записываем в конечный файл только полные строки
