@@ -80,9 +80,8 @@ void *show(tree *root) {
                 printf("left %d", root->left->key);
             if (root->right != NULL)
             printf("\t\t right %d", root->right->key);
-            printf("\n");
-        } else {
-            printf("leaf %d\t\t", root->key);
+        } else if (root->parent == NULL) {
+            printf("root %d\t\t", root->key);
         }
     show(root->left);
     show(root->right);
@@ -109,16 +108,13 @@ void *remove_(tree *root, int key) {
     tree *p = root, *a = NULL, *b = NULL;
     a = search_(p, key);
     if ((a->left == NULL) && (a->right == NULL)) {
-        if (a->parent != NULL) {
-            b = a->parent;
-            if (a == b->right) {
-                b->right = NULL;
-            }
-            if (a == b->left) {
-                b->left = NULL;
-            }
-        } else
-            printf("YYYYYYYYYYYYYYYYYYYYYYYYY\n");
+        b = a->parent;
+        if (a == b->right) {
+            b->right = NULL;
+        }
+        if (a == b->left) {
+            b->left = NULL;
+        }
     }
 
     if ((a->left == NULL) && (a->right != NULL)) {
