@@ -89,7 +89,7 @@ void add() {
     fclose(thisfile);
 }
 
-void delite() {
+void delete() {
     FILE *thisfile;
     char name[str_len];
     printf("Enter a name of the removing file\n");
@@ -191,7 +191,7 @@ int main(int argc, char const *argv[])
         print();
     }
     else if (!strcmp(argv[1], "-r")) {
-        delite();
+        delete();
     }
     else if (!strcmp(argv[1], "-f")) {
         func();
