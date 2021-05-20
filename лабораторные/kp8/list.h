@@ -22,8 +22,6 @@ struct _list
 
 list *list_create();
 void list_insert(list *lst, item val);
-void list_insert_before(list *lst, item val, list_node *next_node);
-void list_insert_after(list *lst, item curr_val, list_node *prev_node);
 void list_delete_elem(list *lst, list_node *node);
 void list_fprint(list *lst, FILE *stream);
 
